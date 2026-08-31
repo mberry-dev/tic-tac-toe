@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TicTacToeApp</string>
+    <string name="player_turn">Player %1$s Turn</string>
+    <string name="reset_game">Reset Game</string>
+    <string name="winner_text"></string>
+    <string name="player_wins">Player %1$s Wins!</string>
+    <string name="tie_game">Tie Game</string>
+    <string name="mode_pvp">Mode: Player vs Player</string>
+    <string name="mode_ai">Mode: Player vs AI</string>
+
+    <!-- Content descriptions for buttons -->
+    <string name="cell_0_0">Cell 0 0</string>
+    <string name="cell_0_1">Cell 0 1</string>
+    <string name="cell_0_2">Cell 0 2</string>
+    <string name="cell_1_0">Cell 1 0</string>
+    <string name="cell_1_1">Cell 1 1</string>
+    <string name="cell_1_2">Cell 1 2</string>
+    <string name="cell_2_0">Cell 2 0</string>
+    <string name="cell_2_1">Cell 2 1</string>
+    <string name="cell_2_2">Cell 2 2</string>
+</resources>
+

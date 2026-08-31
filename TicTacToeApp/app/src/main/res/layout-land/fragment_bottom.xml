@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <GridLayout
+        android:id="@+id/gameGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:padding="4dp">
+
+        <Button android:id="@+id/b00"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_0_0" />
+        <Button android:id="@+id/b01"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_0_1" />
+        <Button android:id="@+id/b02"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_0_2" />
+
+        <Button android:id="@+id/b10"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_1_0" />
+        <Button android:id="@+id/b11"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_1_1" />
+        <Button android:id="@+id/b12"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_1_2" />
+
+        <Button android:id="@+id/b20"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_2_0" />
+        <Button android:id="@+id/b21"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_2_1" />
+        <Button android:id="@+id/b22"
+            android:layout_width="80dp" android:layout_height="80dp"
+            android:textSize="28sp" android:textStyle="bold"
+            android:contentDescription="@string/cell_2_2" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_game"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
