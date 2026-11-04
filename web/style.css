@@ -1,0 +1,171 @@
+/* Colors are tokens so light and dark themes only change values.
+   X is blue and O is red, as in the Android app. */
+:root {
+  --bg: #f4f4f9;
+  --surface: #ffffff;
+  --text: #222222;
+  --muted: #555b66;
+  --border: #c9ccd6;
+  --cell: #fafafa;
+  --cell-hover: #eef2fb;
+  --x: #0064c8;
+  --o: #c80000;
+  --accent: #0a58ca;
+  --accent-text: #ffffff;
+  --win: #fff3c4;
+  --win-border: #b58100;
+  --focus: #0a58ca;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161b;
+    --surface: #1d2027;
+    --text: #eceef3;
+    --muted: #aab0bd;
+    --border: #3a3f4b;
+    --cell: #262a33;
+    --cell-hover: #2f3541;
+    --x: #6db3ff;
+    --o: #ff8080;
+    --accent: #7ab4ff;
+    --accent-text: #0b1220;
+    --win: #4a3f12;
+    --win-border: #e0b73a;
+    --focus: #9cc7ff;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.page {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+}
+
+#app { width: 100%; }
+
+.game {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.score-x { color: var(--x); }
+.score-o { color: var(--o); }
+
+.status {
+  margin: 0;
+  min-height: 1.6em;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 22rem;
+  margin: 0 auto;
+}
+
+.cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  min-height: 4rem;
+  padding: 0;
+  font: inherit;
+  font-size: clamp(2.5rem, 14vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text);
+  background: var(--cell);
+  border: 2px solid var(--border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.cell.is-x { color: var(--x); }
+.cell.is-o { color: var(--o); }
+.cell[aria-disabled="true"] { cursor: default; }
+.cell.is-winning {
+  background: var(--win);
+  border-color: var(--win-border);
+}
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  min-height: 2.75rem;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 0.75rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.reset-button {
+  color: var(--accent-text);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.about {
+  margin: 1.25rem 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.about a { color: var(--accent); }
+
+.notice { text-align: center; }
+
+/* Hover colors only on devices that can really hover, so they never stick after a tap */
+@media (hover: hover) {
+  .cell:hover:not([aria-disabled="true"]) { background: var(--cell-hover); }
+  .button:hover { background: var(--cell-hover); }
+  .reset-button:hover { background: var(--accent); filter: brightness(1.08); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cell, .button { transition: background-color 120ms ease; }
+}
