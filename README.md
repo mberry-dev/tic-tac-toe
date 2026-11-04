@@ -35,7 +35,7 @@ npm install
 npm start
 ```
 
-Then open the address it prints (usually http://localhost:3000).
+Then open the address it prints in your browser (usually `http://localhost:3000`). It only works while the command above is running on your own computer.
 
 ### Tests
 
