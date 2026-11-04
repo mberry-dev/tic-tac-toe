@@ -72,14 +72,15 @@ I tested the app on three Pixel emulator profiles (Pixel 2, Pixel 4 and Pixel 7)
 
 ### Run it
 
-You need [Android Studio](https://developer.android.com/studio).
+You need a current, stable version of [Android Studio](https://developer.android.com/studio). The project uses Android Gradle Plugin 9.0 and Gradle 9.1, so an older Android Studio may ask you to update before it will open the project.
 
 1. Clone the repo:
    ```bash
    git clone https://github.com/mberry-dev/tic-tac-toe.git
    ```
 2. In Android Studio choose **Open** and select the `TicTacToeApp` folder inside the repo.
-3. Let Gradle finish syncing, then run the app on an emulator or a connected phone (Android 7.0 / API 24 or newer).
+3. Let Gradle finish syncing. The first sync downloads Gradle and the Java version the project needs, so it requires an internet connection and can take a few minutes.
+4. Run the app on an emulator or a connected phone (Android 7.0 / API 24 or newer).
 
 ## Project structure
 
